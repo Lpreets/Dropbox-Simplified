@@ -17,7 +17,7 @@ const Header = () => {
                 width={50}
             />
            </div>
-            <h1 className="font-bold">Dropbox</h1>
+            <h1 className="font-bold">Dropbox Clone</h1>
         </Link>
 
         <div className="px-5 flex space-x-2 items-center">

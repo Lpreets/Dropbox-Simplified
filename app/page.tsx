@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col">
         <div className="p-10 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white space-y-5">
-          <h1 className="text-5xl font-bold">Welcome to Dropbox <br />
+          <h1 className="text-5xl font-bold">Welcome to Dropbox Clone<br />
           <br />
           Storing everything you need in one place upload your files and access them anywhere
           </h1>
@@ -26,7 +26,7 @@ export default function Home() {
             <source 
               src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/overview/lp-header-graphite200-1920x1080.mp4"
             />
-            Your browser does not support the video tag.
+
           </video>
         </div>
       </div>
