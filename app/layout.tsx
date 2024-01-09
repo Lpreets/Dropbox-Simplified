@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dropbox Clone",
-  description: "Dropbox Clone",
+  description: "Dropbox Clone by Lovepreet Zelenkov Singh",
 };
 
 export default function RootLayout({
