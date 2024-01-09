@@ -3,6 +3,7 @@
 import { COLOR_EXTENSION_MAP } from "@/constant";
 import { FileType } from "@/types"
 import { ColumnDef } from "@tanstack/react-table"
+import Link from "next/link";
 import prettyBytes from "pretty-bytes"
 import { FileIcon, defaultStyles } from "react-file-icon";
 
@@ -38,16 +39,16 @@ export const columns: ColumnDef<FileType>[] = [
     }
   },
   {
-    accessorKey: "downloadUrl",
+    accessorKey: "downloadURL",
     header: "Link",
     cell: ({ renderValue, ...props}) => (
-        <a
+        <Link
             href={renderValue() as string}
             target="_blank"
             className="underline text-blue-500 hover:text-blue-600"
         >
             Download
-        </a>
+        </Link>
     )
   }
 ]

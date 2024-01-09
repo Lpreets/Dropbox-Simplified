@@ -3,19 +3,17 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { db, storage } from "@/firebase";
 import { useAppStore } from "@/store/store";
 import { useUser } from "@clerk/nextjs";
 import { deleteDoc, doc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
+import toast from 'react-hot-toast';
 
 export function DeleteModal() {
   const { user } = useUser();
@@ -31,12 +29,16 @@ export function DeleteModal() {
   async function deleteFile() {
     if (!user || !fileId) return;
 
-    const fileRef = ref(storage, `users/${user.id}/${fileId}`);
+    const toadId = toast.loading("Deleting file...")
+
+    const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
 
     try {
       deleteObject(fileRef).then(async () => {
         deleteDoc(doc(db, "users", user.id, "files", fileId)).then(() => {
           console.log("Deleted File");
+
+          toast.success("Deleted Successfully", { id: toadId });
         });
       })
       .finally(() => {
@@ -44,6 +46,8 @@ export function DeleteModal() {
       })
     } catch (error) {
       console.log(error);
+
+      toast.error("Something went wrong deleting file", { id: toadId });  
     }
   }
 
@@ -76,6 +80,7 @@ export function DeleteModal() {
           <Button
             type="submit"
             size="sm"
+            variant={"destructive"}
             className="px-3 flex-1"
             onClick={() => deleteFile()}
           >
