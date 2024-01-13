@@ -7,13 +7,13 @@ export default function Home() {
     <main>
       <div className="flex flex-col">
         <div className="p-10 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white space-y-5">
-          <h1 className="text-5xl font-bold">Welcome to Dropbox Clone<br />
+          <h1 className="text-5xl font-bold">Welcome to Dropbox Simplified<br />
           <br />
           Storing everything you need in one place upload your files and access them anywhere
           </h1>
 
           <p className="pb-20">
-            Enhange your personal and professional life with Dropbox, offering cloud storage for all your files, photos, videos and more.
+            Enhance your personal and professional life with Dropbox, offering cloud storage for all your files, photos, videos and more.
           </p>
 
           <Link href="/dashboard" className="flex cursor-pointer bg-blue-500 p-5 w-fit ">

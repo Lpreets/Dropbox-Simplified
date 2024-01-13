@@ -9,8 +9,8 @@ import { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dropbox Clone",
-  description: "Dropbox Clone by Lovepreet Zelenkov Singh",
+  title: "Dropbox Simplified",
+  description: "Dropbox Simplified by Lovepreet Zelenkov Singh",
 };
 
 export default function RootLayout({
